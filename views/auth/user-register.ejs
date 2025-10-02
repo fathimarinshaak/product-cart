@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Page</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    /* Background and font */
+    body {
+      background: #f5e6d3; /* Vintage cream */
+      font-family: 'Press Start 2P', cursive;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Register card */
+    .register-card {
+      background: #d4a373; /* Brown/tan */
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      width: 100%;
+      max-width: 400px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .register-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    }
+
+    /* Title */
+    .register-card h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #3e2723; /* Dark brown */
+    }
+
+    /* Input fields */
+    .form-control {
+      background: #f5e6d3;
+      border: 2px solid #3e2723;
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-control:focus {
+      border-color: #8d6e63;
+      box-shadow: 0 0 8px #8d6e63;
+      outline: none;
+    }
+
+    /* Register button */
+    .btn-register {
+      background: #3e2723;
+      color: #f5e6d3;
+      font-weight: bold;
+      width: 100%;
+      border-radius: 10px;
+      padding: 0.75rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-register:hover {
+      background: #8d6e63;
+      transform: scale(1.05);
+    }
+
+    /* Interactive links */
+    .login-link {
+      color: #3e2723;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 12px;
+    }
+
+    .login-link:hover {
+      color: #8d6e63;
+      text-decoration: underline;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 576px) {
+      .register-card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="register-card">
+    <h2>Register</h2>
+    <form method="post" action="/user/register">
+      <div class="mb-3">
+        <input type="text" class="form-control" placeholder="Username" name="username" required>
+      </div>
+      <div class="mb-3">
+        <input type="text" class="form-control" placeholder="Full Name" name="name" required>
+      </div>
+      <div class="mb-3">
+        <input type="password" class="form-control" placeholder="Password" name="password" required>
+      </div>
+      <div class="d-flex justify-content-between mb-3">
+        <a href="/user/login" class="login-link">Already have an account? Login</a>
+      </div>
+      <button type="submit" class="btn btn-register">Sign Up</button>
+    </form>
+    <p class="text-center text-danger"><%=msg%></p>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
